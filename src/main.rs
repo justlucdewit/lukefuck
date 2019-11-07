@@ -5,14 +5,14 @@ use std::io::Write;
 use std::env;
 use std::convert::TryInto;
 /*
-+ increase current value    x
-- decrease current value    x
++ increase current value    V
+- decrease current value    V
 > increase pointer pos      V
 < decrease pointer pos      V
 [ loop open                 x
 ] loop close                x
-. output current value      x
-, input into current value  x
+. output current value      V
+, input into current value  V
 
 ! debug                     V
 */
@@ -35,9 +35,18 @@ fn output(byte : u8){
 fn interpreter(){
     let mut values = vec![0];
     let mut ptr : i128 = 0;
+    let mut loop_mem = vec![];
     loop{
         let code = input();
-        for symbol in code.chars(){
+        let mut reading_index : i128 = -1;
+        loop{
+            reading_index += 1;
+            if reading_index >= code.len() as i128{
+                break;
+            }
+
+            let symbol = code.chars().nth(reading_index as usize).unwrap();
+
             if symbol == '>'{
                 ptr+=1;
                 if values.len()-1 < ptr as usize{
@@ -72,10 +81,28 @@ fn interpreter(){
                 }
             }
 
+            else if symbol == '['{
+                loop_mem.push(reading_index);
+            }
+
+            else if symbol == ']'{
+                if values[ptr as usize] == 0{
+                    loop_mem.pop();
+                }else{
+                    println!("looping");
+                    ptr = loop_mem[loop_mem.len()-2];
+                }
+            }
+
             else if symbol == '!'{
                 println!("pointer position: {}", ptr);
+                println!("\n");
                 for (i, v) in values.iter().enumerate(){
                     println!("value {}: {}", i, v)
+                }
+                println!("\n");
+                for (i, v) in loop_mem.iter().enumerate(){
+                    println!("loop mem {}: {}", i, v)
                 }
             }
         }
