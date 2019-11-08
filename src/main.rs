@@ -24,8 +24,10 @@ use rand::Rng;
 / mark current cell as locked   V
 | mark current cell as open     V
 
-? fill current cell with random value between 0 and 255     X
-~ fill current cell with random boolean                     X
+? fill current cell with random value between 0 and 255     V
+~ fill current cell with random boolean                     V
+
+A-Z temp variables
 
 */
 
@@ -53,6 +55,34 @@ fn interpreter(filecode:&str){
     let mut ptr : i128 = 0;
     let mut loop_mem = vec![];
     let mut locked_cells = vec![];
+
+    let mut a = 0;
+    let mut b = 0;
+    let mut c = 0;
+    let mut d = 0;
+    let mut e = 0;
+    let mut f = 0;
+    let mut g = 0;
+    let mut h = 0;
+    let mut i = 0;
+    let mut j = 0;
+    let mut k = 0;
+    let mut l = 0;
+    let mut m = 0;
+    let mut n = 0;
+    let mut o = 0;
+    let mut p = 0;
+    let mut q = 0;
+    let mut r = 0;
+    let mut s = 0;
+    let mut t = 0;
+    let mut u = 0;
+    let mut v = 0;
+    let mut w = 0;
+    let mut x = 0;
+    let mut y = 0;
+    let mut z = 0;
+
     loop{
         let mut code = filecode.to_string();
         if filecode == "pg"{
@@ -131,14 +161,37 @@ fn interpreter(filecode:&str){
 
             else if symbol == '!'{
                 println!("pointer position: {}", ptr);
-                println!("\n");
+                println!(" ");
                 for (i, v) in values.iter().enumerate(){
                     println!("value {}: {}", i, v)
                 }
-                println!("\n");
-                for (i, v) in loop_mem.iter().enumerate(){
-                    println!("loop mem {}: {}", i, v)
-                }
+                println!(" ");
+                println!("A is {}", a);
+                println!("B is {}", b);
+                println!("C is {}", c);
+                println!("D is {}", d);
+                println!("E is {}", e);
+                println!("F is {}", f);
+                println!("G is {}", g);
+                println!("H is {}", h);
+                println!("I is {}", i);
+                println!("J is {}", j);
+                println!("K is {}", k);
+                println!("L is {}", l);
+                println!("M is {}", m);
+                println!("N is {}", n);
+                println!("O is {}", o);
+                println!("P is {}", p);
+                println!("Q is {}", q);
+                println!("R is {}", r);
+                println!("S is {}", s);
+                println!("T is {}", t);
+                println!("U is {}", u);
+                println!("V is {}", v);
+                println!("W is {}", w);
+                println!("X is {}", x);
+                println!("Y is {}", y);
+                println!("Z is {}", z);
             }
 
             else if symbol == '@'{
@@ -204,10 +257,269 @@ fn interpreter(filecode:&str){
                     println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
                 }
             }
+
+            else if symbol == 'A'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = a;
+                    a = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'B'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = b;
+                    b = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'C'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = c;
+                    c = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'D'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = d;
+                    d = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'E'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = e;
+                    e = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'F'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = f;
+                    f = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'G'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = g;
+                    g = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'H'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = h;
+                    h = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'I'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = i;
+                    i = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'J'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = j;
+                    j = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'K'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = k;
+                    k = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'L'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = l;
+                    l = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'M'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = m;
+                    m = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'N'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = n;
+                    n = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'O'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = o;
+                    o = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'P'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = p;
+                    p = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'Q'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = q;
+                    q = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'R'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = r;
+                    r = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'S'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = s;
+                    s = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'T'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = t;
+                    t = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'U'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = u;
+                    u = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'V'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = v;
+                    v = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'W'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = w;
+                    w = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'X'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = x;
+                    x = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'Y'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = y;
+                    y = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
+
+            else if symbol == 'Z'{
+                if locked_cells.contains(&ptr) == false{
+                    let tmp = z;
+                    z = values[ptr as usize];
+                    values[ptr as usize] = tmp;
+                }else{
+                    println!("[LF ERROR 102] CANT CHANGE VALUE OF CELL {} BECAUSE IT IS LOCKED WITH VALUE {}", ptr, values[ptr as usize]);
+                }
+            }
         }
         io::stdout().flush();
-        println!("\n");
-
+        println!(" ");
         if filecode != "pg"{
             break;
         }

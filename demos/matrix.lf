@@ -1,0 +1,5 @@
+-[----->+<]>---A        let a be 84
+ZA[->+>+<<]>+A>B;Z      clone a plus 1 too b
+#                       reset tape
+A>B>                    setup printing data
+[;~+[C<C-]C.@>>+]       loop at random jumps then print
