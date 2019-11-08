@@ -33,7 +33,7 @@ fn output(byte : u8){
 }
 
 fn interpreter(){
-    let mut values = vec![0];
+    let mut values = vec![0 as i128];
     let mut ptr : i128 = 0;
     let mut loop_mem = vec![];
     loop{
@@ -59,15 +59,23 @@ fn interpreter(){
             }
 
             else if symbol == '+'{
-                values[ptr as usize] += 1;
+                if values[ptr as usize] == 255{
+                    values[ptr as usize] = 0;
+                }else{
+                    values[ptr as usize] += 1;
+                }
             }
 
             else if symbol == '-'{
-                values[ptr as usize] -= 1;
+                if values[ptr as usize] == 0{
+                    values[ptr as usize] = 255;
+                }else{
+                    values[ptr as usize] -= 1;
+                }
             }
 
             else if symbol == '.'{
-                output(values[ptr as usize]);
+                output(values[ptr as usize].try_into().unwrap());
             }
 
             else if symbol == ','{
@@ -75,7 +83,7 @@ fn interpreter(){
                 let mut str = tmp.trim();
                 if str.len() == 1{
                     let byte = str.chars().next().unwrap() as u8;
-                    values[ptr as usize] = byte;
+                    values[ptr as usize] = byte.try_into().unwrap();
                 }else{
                     println!("[LF ERROR 001] CANT INPUT MORE THEN 1 CHARACTER");
                 }
@@ -89,8 +97,7 @@ fn interpreter(){
                 if values[ptr as usize] == 0{
                     loop_mem.pop();
                 }else{
-                    println!("looping");
-                    ptr = loop_mem[loop_mem.len()-2];
+                    reading_index = loop_mem[loop_mem.len()-1];
                 }
             }
 
@@ -113,7 +120,7 @@ fn interpreter(){
 
 fn main(){
     let args = get_args();
-    const VERSION : &str = "Lukefuck 0.0.0b";
+    const VERSION : &str = "Lukefuck 0.0.1b";
     println!("{}", VERSION);
 
     if args[1] == "playground"{
