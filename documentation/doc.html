@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>lukefuck documentation</title>
+        <style>
+            *{
+                padding: 0px;
+                margin: 0px;
+            }
+
+            #menu{
+                float: left;
+                width: 30%;
+                margin: 50px;
+                background: rgb(156, 227, 229);
+                color: black
+            }
+
+            #main{
+                float: left;
+                text-align: center;
+                margin: 50px;
+                width: 50%;
+            }
+
+            #main p{
+                text-align: left;
+                padding-bottom: 50px;
+            }
+
+            td{
+                padding: 10px;
+                margin: 0px;
+                border-left: 1px solid black;
+                background: rgb(128, 113, 179);
+            }
+
+            table{
+                border: 1px solid black;
+                background-color: black;
+            }
+
+            .active{
+                background-color: greenyellow;
+            }
+
+            .info{
+                text-align: left;
+            }
+
+            .tab1{
+                padding-left: 20px;
+            }
+
+            .tab2{
+                padding-left: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="menu">
+            <ul>
+                <li><a href="#main">documentation</a></li>
+                <li class="tab1"><a href="#first">brainfuck fundamentals</a></li>
+                <li class="tab2"><a href="#second">moving the pointer</a></li>
+            </ul>
+        </div>
+        <div id="main">
+            <h1>Lukefuck documentation</h1><hr>
+            <p>
+                Welcome to lukefuck!
+                Lukefuck is a programming language based on the <i>eseoteric</i> programming
+                language called Brainfuck. eseoteric means it is not made to be effecient nor
+                handy to make something in it, yet it is made to be funny and challenging
+                luck fuck is a language based on brainfuck, yet with additianal features. so you
+                can do much more impressive stuff, and you will still look cool infont of your friends
+            </p>
+            <div id="#first">
+                <h2>CHAPTER 1, brainfuck fundamentals</h2><hr>
+                <p>
+                    scince Lukefuck is basicly brainfuck with extra features, it is first necesairy to
+                    learn normal brainfuck. all the features from brainfuck are also available within
+                    the lukefuck language
+                </p>
+
+                <p>
+                    a brainfuck program lives in a enviroment wich is called the "tape" a tape is a long list of
+                    elements wich contain a certain 8-bit number wich ranges from 0-256 here is a example of a tape
+                    where all the "cells" contain the number 0<br><br>
+                    <table>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </table><br>
+                    a tape also has a "active cell", there is a pointer wich is a number that defines the position
+                    of the current active cell, we call this number the "pointer position" for example: if you want
+                    the left most cell to be the active cell, your pointer position needs to be 0. in this tutorial
+                    we will indicate the current active cell with a green background in the tape<br><br>
+                    <table>
+                        <tr class="info">
+                            pointer position = 2
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="active">0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </table><br>
+                    the point of brain fuck is too move the pointer around by increasing/decreasing the pointer position
+                    and then increasing/decreasing the value of the current active cell
+                </p>
+            </div>
+
+
+            <div id="#second">
+                <h2>CHAPTER 1.1, moving the pointer</h2><hr>
+                <p>
+                    for this secotion you will learn 2 simple commands to move the pointer around
+                    the tape
+                </p>
+            </div>
+        <div>
+    </body>
+</html>
